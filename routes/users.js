@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const plm = require("passport-local-mongoose");
-mongoose.connect("mongodb://localhost:27017/pintrest");
+mongoose.connect(
+  "mongodb+srv://shoebshaikh0073:k4TGgmcUhxsUtiNV@cluster0.mtdidip.mongodb.net/?retryWrites=true&w=majority"
+);
 const useSchema = mongoose.Schema({
   username: String,
   email: String,
