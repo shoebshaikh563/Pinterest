@@ -1,0 +1,76 @@
+<%include ./partials/header.ejs%> <% if (messages.error) { %>
+<script>
+  alert("<%= messages.error %>");
+</script>
+<% } %>
+
+<div
+  class="pt-10 w-full min-h-full bg-center bg-cover bg-[url(./images/bg1.png)] flex justify-center items-center"
+>
+  <div class="w-[35vw] min-h-[80vh] bg-white px-20 py-5 rounded-xl">
+    <img
+      class="m-auto mb-2 w-10 h-10"
+      src="https://s.pinimg.com/webapp/favicon-22eb868c.png"
+      alt=""
+    />
+    <h1
+      class="text-3xl leading-none tracking-tighter text-center font-semibold capitalize my-6"
+    >
+      welcome to pintrest
+    </h1>
+    <form action="/login" method="post">
+      <label class="text-[14px]" for="username">Username</label>
+      <input
+        class="block placeholder:text-gray-400 hover:placeholder:text-black mt-2 w-full px-3 my-2 border-2 border-gray-400 rounded-xl h-12 hover:border-black"
+        type="text"
+        name="username"
+        placeholder="Enter username"
+      />
+      <label class="text-[14px]" for="password">Password</label>
+      <input
+        class="block placeholder:text-gray-400 hover:placeholder:text-black mt-2 w-full px-3 my-2 rounded-xl h-12 border-2 border-gray-400 hover:border-black"
+        type="password"
+        name="password"
+        placeholder="Enter password"
+      />
+      <a href="#" class="my-10 text-[13px] font-semibold hover:underline"
+        >Forgot password</a
+      >
+      <button
+        type="submit"
+        class="block mt-4 w-full px-3 py-2 bg-red-600 text-white rounded-2xl"
+      >
+        Login
+      </button>
+    </form>
+
+    <h1 class="my-4 text-l text-center font-bold">OR</h1>
+    <div
+      class="text-center mt-4 w-full px-3 py-2 bg-red-600 rounded-2xl bg-sky-600"
+    >
+      <h1 class="text-center text-black text-bold text-white cursor-pointer">
+        Continue with Facebook
+      </h1>
+    </div>
+    <div class="mt-4 w-full px-3 py-2 bg-gray-400 rounded-2xl cursor-pointer">
+      <h1 class="text-center text-black text-bold">Continue with Google</h1>
+    </div>
+    <p class="text-center text-[12px] mt-4">
+      By continuing, you agree to Pinterest's
+    </p>
+    <p class="text-center text-[12px]">
+      <span class="font-bold">Terms of Service </span>and acknowledge you've
+      read our <br />
+      <span class="font-bold">Privacy policy. Notice at collection.</span>
+    </p>
+    <div class="w-1/2 h-[0.5px] bg-black m-auto my-3"></div>
+    <p class="text-center text-[12px] font-bold">
+      Not on Pinterest yet?
+      <a href="/register" class="hover:underline">Sign up</a>
+    </p>
+    <p class="text-center text-[12px]">
+      Are you a business ? <span class="font-bold">Get started here</span>
+    </p>
+  </div>
+</div>
+<%include ./partials/footer.ejs%>

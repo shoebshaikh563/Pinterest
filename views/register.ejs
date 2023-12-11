@@ -1,0 +1,65 @@
+<%include ./partials/header.ejs%> <% if (messages.error) { %>
+<script>
+  console.log("Received flash error message:", "<%= messages.error %>");
+  alert("<%= messages.error %>");
+</script>
+<% } %>
+
+<div
+  class="pt-10 w-full min-h-full bg-center bg-cover bg-[url(./images/bg1.png)] flex justify-center items-center"
+>
+  <div class="w-[35vw] min-h-[80vh] bg-white px-20 py-5 rounded-xl">
+    <img
+      class="m-auto mb-2 w-10 h-10"
+      src="https://s.pinimg.com/webapp/favicon-22eb868c.png"
+      alt=""
+    />
+    <h1
+      class="text-3xl leading-none tracking-tighter text-center font-semibold capitalize my-6"
+    >
+      create new account
+    </h1>
+    <form action="/register" method="post">
+      <label class="text-[14px]" for="username">Username</label>
+      <input
+        class="block placeholder:text-gray-400 hover:placeholder:text-black mt-2 w-full px-3 my-2 border-2 border-gray-400 rounded-xl h-12 hover:border-black"
+        type="text"
+        name="username"
+        placeholder="Enter username"
+      />
+      <label class="text-[14px]" for="email">Email</label>
+      <input
+        class="block placeholder:text-gray-400 hover:placeholder:text-black mt-2 w-full px-3 my-2 rounded-xl h-12 border-2 border-gray-400 hover:border-black"
+        type="email"
+        name="email"
+        placeholder="Enter email"
+      />
+      <label class="text-[14px]" for="contact">Contact</label>
+      <input
+        class="block placeholder:text-gray-400 hover:placeholder:text-black mt-2 w-full px-3 my-2 border-2 border-gray-400 rounded-xl h-12 hover:border-black"
+        type="number"
+        name="contact"
+        placeholder="Enter contact"
+      />
+      <label class="text-[14px]" for="password">Pawssword</label>
+      <input
+        class="block placeholder:text-gray-400 hover:placeholder:text-black mt-2 w-full px-3 my-2 border-2 border-gray-400 rounded-xl h-12 hover:border-black"
+        type="password"
+        name="password"
+        placeholder="Enter password"
+      />
+
+      <button
+        type="submit"
+        class="block mt-6 w-full px-3 py-2 bg-red-600 text-white rounded-2xl"
+      >
+        Register
+      </button>
+    </form>
+    <p class="mt-6 text-center">
+      Do you have account?
+      <a class="font-bold hover:underline" href="/">Login</a>
+    </p>
+  </div>
+  <%include ./partials/footer.ejs%>
+</div>

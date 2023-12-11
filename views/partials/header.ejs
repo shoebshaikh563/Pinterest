@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://s.pinimg.com/webapp/favicon-22eb868c.png"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+<%if(nav){%>
+<div
+      class="w-full bg-zinc-800 text-white flex items-center justify-between px-10 py-3 border-b border-zinc-600"
+    >
+      <h1 class="text-lg">Pinterest</h1>
+      <div class="flex gap-10 items-center">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a href="/logout" class="text-lg px-5 py-1 bg-red-600 rounded-lg"
+          >Logout</a
+        >
+      </div>
+    </div>
+
+<%}%>
+     
+  

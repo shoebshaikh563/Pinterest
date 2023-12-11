@@ -1,0 +1,40 @@
+<%include ./partials/header.ejs%>
+<div
+  class="w-full min-h-screen bg-zinc-800 px-10 py-10 flex flex-wrap gap-10 overflow-hidden"
+>
+  <%if(user.posts && user.posts.length > 0 && user.posts[0].image){%>
+  <%user.posts.forEach((e)=>{%>
+
+  <div class="show-card block h-[200px] w-40 overflow-x-hidden overflow-y-auto">
+    <div class="bg-white h-40 w-40 block rounded-lg overflow-hidden">
+      <img
+        class="w-full h-full object-cover bg-center"
+        src="/images/uploads/<%=e.image%>"
+        alt=""
+      />
+    </div>
+    <h1 class="text-white text-xl"><%= e.title%></h1>
+    <p class="text-white text-justify text-[10px]"><%= e.description%></p>
+    <a
+      href="/post/<%=e._id%>"
+      class="text-[10px] rounded inline-block my-2 px-2 py-2 text-white bg-red-600"
+      >Delete</a
+    >
+    <a
+      href="/update/<%=e._id%>"
+      class="text-[10px] rounded inline-block my-2 px-2 py-2 text-white bg-blue-600"
+      >Update</a
+    >
+  </div>
+
+  <%})%> <%}else{%>
+
+  <h1
+    class="text-white absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-semibold text-3xl"
+  >
+    No Posts
+  </h1>
+
+  <%}%>
+</div>
+<%include ./partials/footer.ejs%>
